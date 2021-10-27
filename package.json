@@ -1,0 +1,24 @@
+{
+  "name": "selena-groh-next-material",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.5.1",
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/material": "latest",
+    "clsx": "latest",
+    "contentful": "^9.1.4",
+    "next": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}

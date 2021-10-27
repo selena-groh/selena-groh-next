@@ -1,5 +1,8 @@
 import { createClient } from "contentful";
-import Link from "next/link";
+import { INLINES } from "@contentful/rich-text-types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "/src/Link";
+import MuiLink from "@mui/material/Link";
 import Image from "next/image";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -7,7 +10,19 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActions } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Chip from "@mui/material/Chip";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+
+const options = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node, children) => (
+      <MuiLink href={node.data.uri}>{children}</MuiLink>
+    ),
+  },
+};
 
 export async function getStaticProps() {
   const client = createClient({
@@ -15,7 +30,10 @@ export async function getStaticProps() {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
 
-  const res = await client.getEntries({ content_type: "project" });
+  const res = await client.getEntries({
+    content_type: "project",
+    order: "-fields.dateCompleted",
+  });
 
   return {
     props: {
@@ -33,14 +51,12 @@ function Projects({ projects }) {
           <Grid item xs={12} md={6} key={project.fields.slug}>
             <Card>
               <CardContent>
-                {/* <CardMedia title="Your title" sx={{ marginBottom: "100%" }}>
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  > */}
+                {/* <CardMedia title="Your title" sx={{ marginBottom: "100%" }}>*/}
+                {/* <div
+                  style={{
+                    maxHeight: "300px",
+                  }}
+                > */}
                 <Image
                   src={"https:" + project.fields.icon.fields.file.url}
                   width={
@@ -49,9 +65,10 @@ function Projects({ projects }) {
                   height={
                     project.fields.icon.fields.file.details.image.height / 2
                   }
+                  layout="responsive"
                 />
-                {/* </div>
-                </CardMedia> */}
+                {/* </div> */}
+                {/* </CardMedia> */}
 
                 <Typography gutterBottom variant="h5" component="h5">
                   {project.fields.name}
@@ -60,29 +77,39 @@ function Projects({ projects }) {
                   {project.fields.date}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {documentToReactComponents(project.fields.description)}
+                  {documentToReactComponents(
+                    project.fields.description,
+                    options
+                  )}
                 </Typography>
-                {project.fields.toolsUsed.map((tool) => (
-                  <Typography gutterBottom variant="body2" key={tool}>
-                    {tool}
-                  </Typography>
-                ))}
+                <Box display="flex" flexWrap="wrap" gap={0.5}>
+                  {project.fields.toolsUsed.map((tool) => (
+                    <Chip
+                      label={tool}
+                      size="small"
+                      variant="outlined"
+                      key={tool}
+                    />
+                  ))}
+                </Box>
               </CardContent>
               <CardActions>
-                <Button
-                  size="small"
-                  color="primary"
-                  href={project.fields.liveLink}
-                >
-                  See it
-                </Button>
-                <Button
-                  size="small"
-                  color="primary"
-                  href={project.fields.gitHubLink}
-                >
-                  Code
-                </Button>
+                {project.fields.liveLink && (
+                  <IconButton
+                    aria-label="Open the project"
+                    href={project.fields.liveLink}
+                  >
+                    <OpenInNewIcon />
+                  </IconButton>
+                )}
+                {project.fields.gitHubLink && (
+                  <IconButton
+                    aria-label="Open the GitHub code"
+                    href={project.fields.gitHubLink}
+                  >
+                    <GitHubIcon />
+                  </IconButton>
+                )}
                 <Link
                   href={`/projects/${project.fields.slug}`}
                   key={project.fields.slug}

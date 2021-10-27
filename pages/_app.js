@@ -23,7 +23,7 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Container maxWidth="md">
+        <Container maxWidth="md" sx={{ pb: 4 }}>
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>

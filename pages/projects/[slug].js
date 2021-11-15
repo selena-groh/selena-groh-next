@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "/components/Layout";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -51,7 +52,7 @@ function Project({ project }) {
 
   const icon = project.fields.icon;
   return (
-    <div>
+    <Layout title={project.fields.name}>
       <div>
         <h1>{project.fields.name}</h1>
         <div>
@@ -74,7 +75,7 @@ function Project({ project }) {
           <a>See More Projects</a>
         </Link>
       </div>
-    </div>
+    </Layout>
   );
 }
 

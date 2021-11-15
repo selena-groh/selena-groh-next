@@ -15,6 +15,7 @@ import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Stack from "@mui/material/Stack";
+import Layout from "/components/Layout";
 
 const options = {
   renderNode: {
@@ -44,7 +45,7 @@ export async function getStaticProps() {
 
 function Projects({ projects }) {
   return (
-    <>
+    <Layout title="Projects">
       <Typography variant="h1" component="h1">
         Projects
       </Typography>
@@ -62,11 +63,9 @@ function Projects({ projects }) {
                 <Stack spacing={1}>
                   <Image
                     src={"https:" + project.fields.icon.fields.file.url}
-                    width={
-                      project.fields.icon.fields.file.details.image.width / 2
-                    }
+                    width={project.fields.icon.fields.file.details.image.width}
                     height={
-                      project.fields.icon.fields.file.details.image.height / 2
+                      project.fields.icon.fields.file.details.image.height
                     }
                     layout="responsive"
                   />
@@ -126,10 +125,8 @@ function Projects({ projects }) {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Layout>
   );
 }
-
-Projects.title = "Projects";
 
 export default Projects;

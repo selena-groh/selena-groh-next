@@ -2,11 +2,11 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Layout from "/components/Layout";
 
-export default function Home() {
+export default function Contact() {
   return (
-    <Layout>
+    <Layout title="Contact">
       <Typography variant="h1" component="h1">
-        Welcome
+        Contact
       </Typography>
     </Layout>
   );

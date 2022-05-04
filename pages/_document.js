@@ -1,7 +1,7 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ColorModeScript } from "@chakra-ui/react";
-import chakraTheme from "./theme";
+import chakraTheme from "../src/theme";
 
 export default class MyDocument extends Document {
   render() {

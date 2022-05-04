@@ -1,26 +1,26 @@
 import { createClient } from "contentful";
 import { INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Link from "/src/Link";
-import MuiLink from "@mui/material/Link";
-import Image from "next/image";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { Button, CardActions } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Chip from "@mui/material/Chip";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import Stack from "@mui/material/Stack";
 import Layout from "/components/Layout";
+import NextLink from "next/link";
+import Image from "next/image";
+import {
+  Box,
+  Heading,
+  Icon,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  SimpleGrid,
+  Tag,
+  Text,
+} from "@chakra-ui/react";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
-      <MuiLink href={node.data.uri}>{children}</MuiLink>
+      <Link href={node.data.uri}>{children}</Link>
     ),
   },
 };
@@ -46,85 +46,51 @@ export async function getStaticProps() {
 function Projects({ projects }) {
   return (
     <Layout title="Projects">
-      <Typography variant="h1" component="h1">
-        Projects
-      </Typography>
-      <Grid container spacing={2}>
+      <Heading as="h1">Projects</Heading>
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4}>
         {projects.map((project) => (
-          <Grid item xs={12} md={6} key={project.fields.slug} display="flex">
-            <Card
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                flexDirection: "column",
-              }}
+          <Box key={project.fields.slug} display="flex">
+            <LinkBox
+              as="article"
+              maxW="sm"
+              p="5"
+              borderWidth="1px"
+              rounded="md"
             >
-              <CardContent>
-                <Stack spacing={1}>
-                  <Image
-                    src={"https:" + project.fields.icon.fields.file.url}
-                    width={project.fields.icon.fields.file.details.image.width}
-                    height={
-                      project.fields.icon.fields.file.details.image.height
-                    }
-                    layout="responsive"
-                  />
-                  <Typography variant="h5" component="h2">
-                    {project.fields.name}
-                  </Typography>
-                  <Typography variant="body2">{project.fields.date}</Typography>
-                </Stack>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  component="div"
-                >
-                  {documentToReactComponents(
-                    project.fields.description,
-                    options
-                  )}
-                </Typography>
-                <Box display="flex" flexWrap="wrap" gap={0.5}>
-                  {project.fields.toolsUsed.map((tool) => (
-                    <Chip
-                      label={tool}
-                      size="small"
-                      variant="outlined"
-                      key={tool}
-                    />
-                  ))}
-                </Box>
-              </CardContent>
-              <CardActions>
-                {project.fields.liveLink && (
-                  <IconButton
-                    aria-label="Open the project"
-                    href={project.fields.liveLink}
-                  >
-                    <OpenInNewIcon />
-                  </IconButton>
-                )}
-                {project.fields.gitHubLink && (
-                  <IconButton
-                    aria-label="Open the GitHub code"
-                    href={project.fields.gitHubLink}
-                  >
-                    <GitHubIcon />
-                  </IconButton>
-                )}
-                <Link
-                  href={`/projects/${project.fields.slug}`}
-                  key={project.fields.slug}
-                >
-                  <Button size="small" color="primary">
-                    Read More
-                  </Button>
+              <Image
+                src={`https:${project.fields.icon.fields.file.url}`}
+                width={project.fields.icon.fields.file.details.image.width}
+                height={project.fields.icon.fields.file.details.image.height}
+                layout="responsive"
+              />
+              <Heading as="h3" size="md" my="2">
+                <NextLink href={`/projects/${project.fields.slug}`} passHref>
+                  <LinkOverlay>{project.fields.name}</LinkOverlay>
+                </NextLink>
+              </Heading>
+              <Text>{project.fields.date}</Text>
+              <Text mb="3">
+                {documentToReactComponents(project.fields.description, options)}
+              </Text>
+              <Box display="flex" flexWrap="wrap" gap={1}>
+                {project.fields.toolsUsed.map((tool) => (
+                  <Tag key={tool}>{tool}</Tag>
+                ))}
+              </Box>
+              {project.fields.liveLink && (
+                <Link href={project.fields.liveLink}>
+                  <Icon aria-label="Live link" as={FaExternalLinkAlt} />
                 </Link>
-              </CardActions>
-            </Card>
-          </Grid>
+              )}
+              {project.fields.gitHubLink && (
+                <Link href={project.fields.gitHubLink}>
+                  <Icon aria-label="GitHub code" as={FaGithub} />
+                </Link>
+              )}
+            </LinkBox>
+          </Box>
         ))}
-      </Grid>
+      </SimpleGrid>
     </Layout>
   );
 }

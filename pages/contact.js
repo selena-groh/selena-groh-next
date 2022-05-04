@@ -1,13 +1,11 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
 import Layout from "/components/Layout";
+import { Heading } from "@chakra-ui/react";
 
 export default function Contact() {
   return (
     <Layout title="Contact">
-      <Typography variant="h1" component="h1">
-        Contact
-      </Typography>
+      <Heading as="h1">Contact</Heading>
     </Layout>
   );
 }

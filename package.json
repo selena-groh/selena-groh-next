@@ -3,20 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
     "@contentful/rich-text-react-renderer": "^15.5.1",
     "@contentful/rich-text-types": "^15.5.1",
-    "@emotion/cache": "latest",
-    "@emotion/react": "latest",
-    "@emotion/server": "latest",
-    "@emotion/styled": "latest",
-    "@mui/icons-material": "^5.0.5",
-    "@mui/material": "latest",
-    "clsx": "latest",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "contentful": "^9.1.4",
+    "framer-motion": "^6",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^4.3.1"
   },
   "scripts": {
     "dev": "next",

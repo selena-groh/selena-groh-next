@@ -57,7 +57,7 @@ function Project({ project }) {
         <h1>{project.fields.name}</h1>
         <div>
           <Image
-            src={"https:" + icon.fields.file.url}
+            src={`https:${icon.fields.file.url}`}
             width={icon.fields.file.details.image.width}
             height={icon.fields.file.details.image.height}
           />

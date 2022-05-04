@@ -1,32 +1,21 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import MuiLink from "@mui/material/Link";
-import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import NextLink from "next/link";
+import { Icon, Link, Text } from "@chakra-ui/react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer>
-      <Stack spacing={2} direction="row">
-        <Typography variant="body">Selena Groh</Typography>
-        <MuiLink href="mailto:contact@selenagroh.com">
-          contact@selenagroh.com
-        </MuiLink>{" "}
-        <IconButton
-          aria-label="Go to GitHub"
-          href="https://github.com/selena-groh"
-        >
-          <GitHubIcon />
-        </IconButton>
-        <IconButton
-          aria-label="Go to LinkedIn"
-          href="https://www.linkedin.com/in/selena-groh/"
-        >
-          <LinkedInIcon />
-        </IconButton>
-      </Stack>
+      <Text>Selena Groh</Text>
+      <NextLink href="mailto:contact@selenagroh.com" passHref>
+        <Link>contact@selenagroh.com</Link>
+      </NextLink>
+      <Link href="https://github.com/selena-groh">
+        <Icon aria-label="Github" as={FaGithub} boxSize="1.5em" />
+      </Link>
+      <Link href="https://www.linkedin.com/in/selena-groh/">
+        <Icon aria-label="LinkedIn" as={FaLinkedin} boxSize="1.5em" />
+      </Link>
     </footer>
   );
 }

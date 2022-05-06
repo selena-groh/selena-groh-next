@@ -46,39 +46,35 @@ export async function getStaticProps() {
 function Projects({ projects }) {
   return (
     <Layout title="Projects">
-      <Heading as="h1">Projects</Heading>
+      <Heading as="h1" mb={4}>
+        Projects
+      </Heading>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4}>
         {projects.map((project) => (
           <Box key={project.fields.slug} display="flex">
-            <LinkBox
-              as="article"
-              maxW="sm"
-              p="5"
-              borderWidth="1px"
-              rounded="md"
-            >
+            <LinkBox as="article" p="5" borderWidth="1px" rounded="md">
               <Image
                 src={`https:${project.fields.icon.fields.file.url}`}
                 width={project.fields.icon.fields.file.details.image.width}
                 height={project.fields.icon.fields.file.details.image.height}
                 layout="responsive"
               />
-              <Heading as="h3" size="md" my="2">
+              <Heading as="h3" size="md" my={3}>
                 <NextLink href={`/projects/${project.fields.slug}`} passHref>
                   <LinkOverlay>{project.fields.name}</LinkOverlay>
                 </NextLink>
               </Heading>
-              <Text>{project.fields.date}</Text>
-              <Text mb="3">
+              <Text mb={3}>{project.fields.date}</Text>
+              <Text mb={3}>
                 {documentToReactComponents(project.fields.description, options)}
               </Text>
-              <Box display="flex" flexWrap="wrap" gap={1}>
+              <Box display="flex" flexWrap="wrap" gap={2} my={3}>
                 {project.fields.toolsUsed.map((tool) => (
                   <Tag key={tool}>{tool}</Tag>
                 ))}
               </Box>
               {project.fields.liveLink && (
-                <Link href={project.fields.liveLink}>
+                <Link href={project.fields.liveLink} mr={2}>
                   <Icon aria-label="Live link" as={FaExternalLinkAlt} />
                 </Link>
               )}

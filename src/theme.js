@@ -30,6 +30,23 @@ const theme = extendTheme({
         _hover: { textDecorationThickness: "1px" },
       },
     },
+    Tag: {
+      parts: ["container", "label", "closeButton"],
+      variants: {
+        outline: {
+          container: {
+            boxShadow: "inset 0 0 0px 1px #6F0B46", // TODO: replace with color tokens
+            color: "#6F0B46",
+          },
+        },
+        solid: {
+          container: {
+            bg: "#6F0B46",
+            color: "white",
+          },
+        },
+      },
+    },
   },
 });
 

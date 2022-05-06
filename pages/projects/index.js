@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createClient } from "contentful";
 import { INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -7,6 +8,7 @@ import Image from "next/image";
 import {
   Box,
   Heading,
+  HStack,
   Icon,
   Link,
   LinkBox,
@@ -36,21 +38,76 @@ export async function getStaticProps() {
     order: "-fields.dateCompleted",
   });
 
+  const projects = res.items;
+  // Get list of all Tools Used and then Set makes unique
+  const toolFilterOptions = [
+    ...new Set(projects.flatMap((project) => project.fields.toolsUsed)),
+  ];
+
+  const toolFilters = toolFilterOptions.map((toolFilterOption) => ({
+    name: toolFilterOption,
+    isActive: false,
+  }));
+
   return {
     props: {
-      projects: res.items,
+      projects,
+      toolFilters,
     },
   };
 }
 
-function Projects({ projects }) {
+function Projects({ projects, toolFilters }) {
+  const [filters, setFilters] = useState(toolFilters);
+
+  const getFilteredProjects = () => {
+    const activeFilters = filters.filter((filter) => filter.isActive);
+    if (activeFilters.length === 0) {
+      return projects;
+    }
+    // Get names of all filters that are activated
+    const activeFilterNames = activeFilters.map((filter) => filter.name);
+
+    // Get all projects that have at least one tool that is also in the active filters
+    return projects.filter((project) =>
+      // project.fields.toolsUsed.every((tool) => activeFilterNames.includes(tool))
+      activeFilterNames.every((activeFilter) =>
+        project.fields.toolsUsed.includes(activeFilter)
+      )
+    );
+  };
+
+  const filteredProjects = getFilteredProjects();
+
   return (
     <Layout title="Projects">
       <Heading as="h1" mb={4}>
         Projects
       </Heading>
+      <HStack wrap="wrap" spacing={1} mb={4}>
+        {filters.map((filter) => (
+          <Tag
+            key={filter.name}
+            borderRadius="full"
+            variant={filter.isActive ? "solid" : "outline"}
+            cursor="pointer"
+            onClick={() =>
+              setFilters((prevFilters) =>
+                prevFilters.map((prevFilter) =>
+                  prevFilter.name === filter.name
+                    ? // Toggle isActive if the filter is the current filter
+                      { ...prevFilter, isActive: !prevFilter.isActive }
+                    : { ...prevFilter }
+                )
+              )
+            }
+          >
+            {filter.name}
+          </Tag>
+        ))}
+      </HStack>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4}>
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <Box key={project.fields.slug} display="flex">
             <LinkBox as="article" p="5" borderWidth="1px" rounded="md">
               <Image

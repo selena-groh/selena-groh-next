@@ -18,7 +18,12 @@ export default function Home() {
         gap={4}
         alignItems="flex-start"
       >
-        <Box minWidth="200px" width="33%" maxWidth="500px">
+        <Box
+          minWidth="200px"
+          width={{ base: "100%", md: "33%" }}
+          maxWidth="500px"
+          alignSelf={{ base: "center", md: "flex-start" }}
+        >
           <Image
             src={PortraitImage}
             alt="woman standing on top of volcano"
@@ -27,7 +32,7 @@ export default function Home() {
             placeholder="blur"
           />
         </Box>
-        <Container mx={0}>
+        <Container mx={0} px={0}>
           <VStack spacing={4} align="flex-start">
             <Text>
               Currently, I'm a full-stack software engineer at Wayfair. I'm an

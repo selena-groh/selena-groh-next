@@ -14,7 +14,7 @@ export default function Home() {
         I'm a software developer, maker, and stage manager based in Boston, MA.
       </Heading>
       <Flex
-        flexDirection={{ sm: "column", md: "row" }}
+        flexDirection={{ base: "column", md: "row" }}
         gap={4}
         alignItems="flex-start"
       >

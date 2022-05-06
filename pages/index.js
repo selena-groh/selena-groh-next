@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Layout from "/components/Layout";
+import PortraitImage from "../public/SelenaGroh.jpg";
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
 export default function Home() {
@@ -19,11 +20,11 @@ export default function Home() {
       >
         <Box minWidth="200px" width="33%" maxWidth="500px">
           <Image
-            src="/SelenaGroh.jpeg"
+            src={PortraitImage}
             alt="woman standing on top of volcano"
             width={1965}
             height={2316}
-            layout="responsive"
+            placeholder="blur"
           />
         </Box>
         <Container mx={0}>

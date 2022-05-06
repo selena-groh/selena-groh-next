@@ -11,6 +11,8 @@ export default function ImageWithTooltip({ name, image }) {
           width={image.fields.file.details.image.width}
           height={image.fields.file.details.image.height}
           alt={name}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII=" // This is just a gray overlay while image is loading
         />
       </Box>
     </Tooltip>

@@ -72,7 +72,11 @@ export default function Hobbies({
           </Heading>
           <SimpleGrid columns={{ base: 2, sm: 3 }} spacing={2}>
             {legoProjects.map((project) => (
-              <Box display="inline-block" width="100%">
+              <Box
+                display="inline-block"
+                width="100%"
+                key={project.fields.name}
+              >
                 <ImageWithTooltip
                   name={project.fields.name}
                   image={project.fields.mainImage}
@@ -91,6 +95,7 @@ export default function Hobbies({
             <ImageWithTooltip
               name={project.fields.name}
               image={project.fields.mainImage}
+              key={project.fields.name}
             />
           ))}
         </SimpleGrid>
@@ -101,7 +106,7 @@ export default function Hobbies({
         </Heading>
         <Box sx={{ columnCount: [2, 3, 4], gap: "8px" }}>
           {craftsProjects.map((project) => (
-            <Box display="inline-block" width="100%">
+            <Box display="inline-block" width="100%" key={project.fields.name}>
               <ImageWithTooltip
                 name={project.fields.name}
                 image={project.fields.mainImage}
@@ -116,7 +121,7 @@ export default function Hobbies({
         </Heading>
         <Box sx={{ columnCount: [2, 2, 3], gap: "8px" }}>
           {puzzlesProjects.map((project) => (
-            <Box display="inline-block" width="100%">
+            <Box display="inline-block" width="100%" key={project.fields.name}>
               <ImageWithTooltip
                 name={project.fields.name}
                 image={project.fields.mainImage}

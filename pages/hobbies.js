@@ -70,7 +70,7 @@ export default function Hobbies({
           <Heading as="h2" size="lg">
             What I've Built Recently
           </Heading>
-          <SimpleGrid columns={{ base: 2, sm: 3 }} spacing={2}>
+          <SimpleGrid columns={{ base: 2, sm: 3 }} columnGap={2}>
             {legoProjects.map((project) => (
               <Box
                 display="inline-block"
@@ -90,7 +90,7 @@ export default function Hobbies({
         <Heading as="h2" size="lg">
           Baking
         </Heading>
-        <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} spacing={2}>
+        <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} columnGap={2}>
           {bakingProjects.map((project) => (
             <ImageWithTooltip
               name={project.fields.name}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Icon, IconButton } from "@chakra-ui/react";
 import { Lightbox } from "react-modal-image";
 import { FiZoomIn } from "react-icons/fi";

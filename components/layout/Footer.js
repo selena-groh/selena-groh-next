@@ -1,9 +1,8 @@
-import * as React from "react";
 import NextLink from "next/link";
 import { Flex, Heading, HStack, Icon, Link, Text } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer>
       <Flex
@@ -38,4 +37,6 @@ export default function Footer() {
       </Flex>
     </footer>
   );
-}
+};
+
+export default Footer;

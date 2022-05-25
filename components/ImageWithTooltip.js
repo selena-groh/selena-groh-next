@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Box, LinkBox, LinkOverlay, Tooltip } from "@chakra-ui/react";
 import ConditionalWrapper from "components/utils/ConditionalWrapper";
@@ -7,7 +7,7 @@ import { ZoomButton, ZoomModal } from "components/ZoomModal";
 const IMAGE_MAX_WIDTH = 400;
 const TOOLTIP_OFFSET = -60; // Move tooltip onto image enough for 2 lines
 
-export default function ImageWithTooltip({ alt, tooltip, image, link }) {
+const ImageWithTooltip = ({ alt, tooltip, image, link }) => {
   const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
 
   return (
@@ -48,4 +48,6 @@ export default function ImageWithTooltip({ alt, tooltip, image, link }) {
       )}
     </ConditionalWrapper>
   );
-}
+};
+
+export default ImageWithTooltip;

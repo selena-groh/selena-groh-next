@@ -2,8 +2,9 @@ import Head from "next/head";
 import Header from "/components/layout/Header";
 import Footer from "/components/layout/Footer";
 import { Flex, Container } from "@chakra-ui/react";
+import { SkipNavLink, SkipNavContent } from "@chakra-ui/skip-nav";
 
-export default function Layout({ children, title = "" }) {
+const Layout = ({ children, title = "" }) => {
   return (
     <>
       <Head>
@@ -40,17 +41,23 @@ export default function Layout({ children, title = "" }) {
         />
       </Head>
       <Flex minHeight="100vh" flexDirection="column">
+        <SkipNavLink>Skip to content</SkipNavLink>
         <Header />
-        <Container
-          flexGrow="1"
-          py={{ base: 8, md: 16 }}
-          px={4}
-          maxWidth="1000px"
-        >
-          {children}
-        </Container>
+        <main>
+          <Container
+            flexGrow="1"
+            py={{ base: 8, md: 16 }}
+            px={4}
+            maxWidth="1000px"
+          >
+            <SkipNavContent />
+            {children}
+          </Container>
+        </main>
         <Footer />
       </Flex>
     </>
   );
-}
+};
+
+export default Layout;

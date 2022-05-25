@@ -1,4 +1,3 @@
-import React from "react";
 import { createClient } from "contentful";
 import Layout from "components/layout/Layout";
 import GoodreadsReadList from "components/hobbies/GoodreadsReadList";
@@ -42,12 +41,12 @@ export async function getStaticProps() {
   };
 }
 
-export default function Hobbies({
+const Hobbies = ({
   bakingProjects = [],
   craftsProjects = [],
   puzzlesProjects = [],
   legoProjects = [],
-}) {
+}) => {
   return (
     <Layout title="Hobbies">
       <Heading as="h1">Hobbies</Heading>
@@ -117,4 +116,6 @@ export default function Hobbies({
       </Box>
     </Layout>
   );
-}
+};
+
+export default Hobbies;

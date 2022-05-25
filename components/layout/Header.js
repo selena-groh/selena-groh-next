@@ -1,34 +1,48 @@
-import * as React from "react";
 import NextLink from "next/link";
-import { Box, Flex, Heading, HStack, Link, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Spacer } from "@chakra-ui/react";
+import HoverMenu from "components/HoverMenu";
+import HeaderLink from "components/layout/HeaderLink";
+import HeaderSubMenuLink from "components/layout/HeaderSubMenuLink";
 
-export default function Header() {
+const Header = () => {
+  const subMenuLinks = [
+    { name: "Guess Who, Stardew?", href: "/guess-who-stardew" },
+    { name: "Guess Who, Anne?", href: "/guess-who-anne" },
+    { name: "Spelling Bee", href: "/spelling-bee" },
+    { name: "Wordle", href: "/wordle" },
+  ];
+
   return (
-    <Flex
-      minWidth="max-content"
-      alignItems="center"
-      gap="2"
-      bg="primary"
-      px={6}
-      py={4}
-      textColor="white"
-    >
-      <Heading mb={0}>
-        <NextLink href="/" passHref>
-          <Link _hover={{ textUnderline: "none" }} variant="inverse">
-            Selena Groh
-          </Link>
-        </NextLink>
-      </Heading>
-      <Spacer />
-      <HStack spacing="24px">
-        <NextLink href="/projects" passHref>
-          <Link variant="inverse">Projects</Link>
-        </NextLink>
-        <NextLink href="/hobbies" passHref>
-          <Link variant="inverse">Hobbies</Link>
-        </NextLink>
-      </HStack>
-    </Flex>
+    <header>
+      <Flex
+        minWidth="max-content"
+        alignItems="stretch"
+        gap="2"
+        bg="primary"
+        px={6}
+      >
+        <Heading mb={0} py={4}>
+          <NextLink href="/" passHref>
+            <Link _hover={{ textUnderline: "none" }} variant="inverse">
+              Selena Groh
+            </Link>
+          </NextLink>
+        </Heading>
+        <Spacer />
+        <Box display="flex" alignItems="stretch">
+          <HoverMenu
+            menuTrigger={<HeaderLink href="/projects">Projects</HeaderLink>}
+            menuItems={subMenuLinks.map((subMenuLink) => (
+              <HeaderSubMenuLink href={subMenuLink.href}>
+                {subMenuLink.name}
+              </HeaderSubMenuLink>
+            ))}
+          />
+          <HeaderLink href="/hobbies">Hobbies</HeaderLink>
+        </Box>
+      </Flex>
+    </header>
   );
-}
+};
+
+export default Header;

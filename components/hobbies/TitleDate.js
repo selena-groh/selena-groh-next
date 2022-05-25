@@ -1,7 +1,6 @@
-import * as React from "react";
 import { Box, Text } from "@chakra-ui/react";
 
-export default function TitleDate({ title, date }) {
+const TitleDate = ({ title, date }) => {
   return (
     <Box textAlign="center">
       {title && <Text>{title}</Text>}
@@ -15,4 +14,6 @@ export default function TitleDate({ title, date }) {
       )}
     </Box>
   );
-}
+};
+
+export default TitleDate;

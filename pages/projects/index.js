@@ -34,7 +34,7 @@ export async function getStaticProps() {
   };
 }
 
-function Projects({ projects, toolFilters }) {
+const Projects = ({ projects, toolFilters }) => {
   const [filters, setFilters] = useState(toolFilters);
 
   const getFilteredProjects = () => {
@@ -90,6 +90,6 @@ function Projects({ projects, toolFilters }) {
       </SimpleGrid>
     </Layout>
   );
-}
+};
 
 export default Projects;

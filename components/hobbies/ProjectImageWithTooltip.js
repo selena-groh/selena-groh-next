@@ -1,8 +1,7 @@
-import React from "react";
 import ImageWithTooltip from "components/ImageWithTooltip";
 import TitleDate from "components/hobbies/TitleDate";
 
-export default function ProjectImageWithTooltip({ project }) {
+const ProjectImageWithTooltip = ({ project }) => {
   return (
     <ImageWithTooltip
       alt={project.fields.name}
@@ -16,4 +15,6 @@ export default function ProjectImageWithTooltip({ project }) {
       link={project.fields.link}
     />
   );
-}
+};
+
+export default ProjectImageWithTooltip;

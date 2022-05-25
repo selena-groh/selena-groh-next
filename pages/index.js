@@ -1,10 +1,9 @@
-import React from "react";
 import Image from "next/image";
 import Layout from "components/layout/Layout";
 import PortraitImage from "public/SelenaGroh.jpg";
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
       <Heading as="h1" size="2xl">
@@ -62,4 +61,6 @@ export default function Home() {
       </Flex>
     </Layout>
   );
-}
+};
+
+export default Home;

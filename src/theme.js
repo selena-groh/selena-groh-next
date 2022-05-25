@@ -1,6 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
 
-// #6E1B45
 const primaryColor = "#6F0B46";
 
 const theme = extendTheme({
@@ -34,10 +33,16 @@ const theme = extendTheme({
     },
     Link: {
       baseStyle: {
+        color: "primary",
         _hover: { textDecorationThickness: "1px", color: "primary" },
         transition: "color 200ms",
       },
       variants: {
+        icon: {
+          color: "gray.800",
+          _hover: { textDecorationThickness: "1px", color: "primary" },
+          transition: "color 200ms",
+        },
         inverse: {
           color: "white",
           _hover: { textDecorationThickness: "1px", color: "white" },

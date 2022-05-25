@@ -1,4 +1,3 @@
-import React from "react";
 import { LinkBox } from "@chakra-ui/react";
 
 const LinkBoxCard = ({ children, ...rest }) => (

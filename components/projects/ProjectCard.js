@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import NextLink from "next/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -65,7 +65,7 @@ const ProjectCard = ({ project }) => {
             <Text>{fields.date}</Text>
             <Spacer />
             {shouldShowGithubLink && (
-              <Link href={fields.gitHubLink}>
+              <Link href={fields.gitHubLink} variant="icon">
                 <Icon aria-label="GitHub code" as={FaGithub} boxSize="1.4em" />
               </Link>
             )}

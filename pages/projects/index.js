@@ -64,6 +64,7 @@ function Projects({ projects, toolFilters }) {
         {filters.map((filter) => (
           <Tag
             key={filter.name}
+            my={1}
             borderRadius="full"
             variant={filter.isActive ? "solid" : "outline"}
             cursor="pointer"

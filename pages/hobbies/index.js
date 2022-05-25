@@ -1,10 +1,9 @@
 import React from "react";
 import { createClient } from "contentful";
-import Layout from "/components/layout/Layout";
-import GoodreadsReadList from "/components/hobbies/GoodreadsReadList";
+import Layout from "components/layout/Layout";
+import GoodreadsReadList from "components/hobbies/GoodreadsReadList";
 import { Box, Heading, Link, SimpleGrid } from "@chakra-ui/react";
-import ImageWithTooltip from "../components/ImageWithTooltip";
-import TitleDate from "../components/hobbies/TitleDate";
+import ProjectImageWithTooltip from "components/hobbies/ProjectImageWithTooltip";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -58,7 +57,7 @@ export default function Hobbies({
         gridTemplateColumns={{ base: null, md: "max(400px) 1fr" }}
       >
         <Box mb={8}>
-          <Heading size="lg" as="h2">
+          <Heading as="h2" size="lg">
             <Link href="https://www.goodreads.com/user/show/129465259-selena">
               What I've Read Recently
             </Link>
@@ -71,16 +70,8 @@ export default function Hobbies({
           </Heading>
           <SimpleGrid columns={{ base: 2, sm: 3 }} columnGap={2}>
             {legoProjects.map((project) => (
-              <ImageWithTooltip
-                alt={project.fields.name}
-                tooltip={
-                  <TitleDate
-                    title={project.fields.name}
-                    date={project.fields.dateCompleted}
-                  />
-                }
-                image={project.fields.mainImage}
-                link={project.fields.link}
+              <ProjectImageWithTooltip
+                project={project}
                 key={project.fields.name}
               />
             ))}
@@ -93,16 +84,8 @@ export default function Hobbies({
         </Heading>
         <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} columnGap={2}>
           {bakingProjects.map((project) => (
-            <ImageWithTooltip
-              alt={project.fields.name}
-              tooltip={
-                <TitleDate
-                  title={project.fields.name}
-                  date={project.fields.dateCompleted}
-                />
-              }
-              image={project.fields.mainImage}
-              link={project.fields.link}
+            <ProjectImageWithTooltip
+              project={project}
               key={project.fields.name}
             />
           ))}
@@ -115,17 +98,7 @@ export default function Hobbies({
         <Box sx={{ columnCount: [2, 3, 4], gap: "8px" }}>
           {craftsProjects.map((project) => (
             <Box display="inline-block" width="100%" key={project.fields.name}>
-              <ImageWithTooltip
-                alt={project.fields.name}
-                tooltip={
-                  <TitleDate
-                    title={project.fields.name}
-                    date={project.fields.dateCompleted}
-                  />
-                }
-                image={project.fields.mainImage}
-                link={project.fields.link}
-              />
+              <ProjectImageWithTooltip project={project} />
             </Box>
           ))}
         </Box>
@@ -137,17 +110,7 @@ export default function Hobbies({
         <Box sx={{ columnCount: [2, 2, 3], gap: "8px" }}>
           {puzzlesProjects.map((project) => (
             <Box display="inline-block" width="100%" key={project.fields.name}>
-              <ImageWithTooltip
-                alt={project.fields.name}
-                tooltip={
-                  <TitleDate
-                    title={project.fields.name}
-                    date={project.fields.dateCompleted}
-                  />
-                }
-                image={project.fields.mainImage}
-                link={project.fields.link}
-              />
+              <ProjectImageWithTooltip project={project} />
             </Box>
           ))}
         </Box>

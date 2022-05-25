@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createClient } from "contentful";
-import Layout from "/components/layout/Layout";
-import ProjectCard from "/components/projects/ProjectCard";
+import Layout from "components/layout/Layout";
+import ProjectCard from "components/projects/ProjectCard";
 import { Heading, HStack, SimpleGrid, Tag } from "@chakra-ui/react";
 
 export async function getStaticProps() {

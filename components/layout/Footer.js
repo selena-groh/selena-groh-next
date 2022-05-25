@@ -11,7 +11,7 @@ export default function Footer() {
         alignItems="center"
         justifyContent="space-between"
         flexDirection="column"
-        bg="#6F0B46"
+        bg="primary"
         textColor="white"
         px={6}
         py={10}
@@ -20,13 +20,18 @@ export default function Footer() {
           Selena Groh
         </Heading>
         <NextLink href="mailto:contact@selenagroh.com" passHref>
-          <Link mb={4}>contact@selenagroh.com</Link>
+          <Link mb={4} variant="inverse">
+            contact@selenagroh.com
+          </Link>
         </NextLink>
         <HStack spacing="12px">
-          <Link href="https://github.com/selena-groh">
+          <Link href="https://github.com/selena-groh" variant="inverse">
             <Icon aria-label="Github" as={FaGithub} boxSize="1.5em" />
           </Link>
-          <Link href="https://www.linkedin.com/in/selena-groh/">
+          <Link
+            href="https://www.linkedin.com/in/selena-groh/"
+            variant="inverse"
+          >
             <Icon aria-label="LinkedIn" as={FaLinkedin} boxSize="1.5em" />
           </Link>
         </HStack>

@@ -9,7 +9,6 @@ import {
   Heading,
   Icon,
   Link,
-  LinkBox,
   LinkOverlay,
   Spacer,
   Tag,
@@ -18,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { FaGithub } from "react-icons/fa";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";
+import LinkBoxCard from "components/LinkBoxCard";
 
 const IMAGE_MAX_WIDTH = 500;
 
@@ -39,11 +39,11 @@ const ProjectCard = ({ project }) => {
 
   return (
     <Box key={fields.slug} display="flex">
-      <LinkBox as="article" p="5" borderWidth="1px" rounded="md">
+      <LinkBoxCard>
         <VStack spacing={3} alignItems="flex-start">
           <Heading as="h3" size="md">
             <NextLink href={primaryLink} passHref>
-              <LinkOverlay>{fields.name}</LinkOverlay>
+              <LinkOverlay isExternal>{fields.name}</LinkOverlay>
             </NextLink>
           </Heading>
           <Box position="relative">
@@ -77,7 +77,7 @@ const ProjectCard = ({ project }) => {
             ))}
           </Box>
         </VStack>
-      </LinkBox>
+      </LinkBoxCard>
       {isZoomModalOpen && (
         <ZoomModal
           imageUrl={fields.icon.fields.file.url}

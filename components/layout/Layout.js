@@ -35,7 +35,7 @@ export default function Layout({ children, title = "" }) {
           crossOrigin=""
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,400;8..144,600&display=swap"
           rel="stylesheet"
         />
       </Head>

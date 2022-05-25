@@ -8,23 +8,25 @@ export default function Header() {
       minWidth="max-content"
       alignItems="center"
       gap="2"
-      bg="#6F0B46"
+      bg="primary"
       px={6}
       py={4}
       textColor="white"
     >
       <Heading mb={0}>
         <NextLink href="/" passHref>
-          <Link _hover={{ textUnderline: "none" }}>Selena Groh</Link>
+          <Link _hover={{ textUnderline: "none" }} variant="inverse">
+            Selena Groh
+          </Link>
         </NextLink>
       </Heading>
       <Spacer />
       <HStack spacing="24px">
         <NextLink href="/projects" passHref>
-          <Link>Projects</Link>
+          <Link variant="inverse">Projects</Link>
         </NextLink>
         <NextLink href="/hobbies" passHref>
-          <Link>Hobbies</Link>
+          <Link variant="inverse">Hobbies</Link>
         </NextLink>
       </HStack>
     </Flex>

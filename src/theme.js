@@ -1,8 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 
 // #6E1B45
+const primaryColor = "#6F0B46";
 
 const theme = extendTheme({
+  colors: {
+    primary: primaryColor,
+  },
   fonts: {
     body: "system-ui, sans-serif",
     heading: "Roboto Serif, serif",
@@ -23,11 +27,21 @@ const theme = extendTheme({
           fontWeight: "light",
           marginBottom: "12px",
         },
+        md: {
+          fontWeight: "normal",
+        },
       },
     },
     Link: {
       baseStyle: {
-        _hover: { textDecorationThickness: "1px" },
+        _hover: { textDecorationThickness: "1px", color: "primary" },
+        transition: "color 200ms",
+      },
+      variants: {
+        inverse: {
+          color: "white",
+          _hover: { textDecorationThickness: "1px", color: "white" },
+        },
       },
     },
     Tag: {
@@ -35,13 +49,13 @@ const theme = extendTheme({
       variants: {
         outline: {
           container: {
-            boxShadow: "inset 0 0 0px 1px #6F0B46", // TODO: replace with color tokens
-            color: "#6F0B46",
+            boxShadow: `inset 0 0 0px 1px ${primaryColor}`,
+            color: "primary",
           },
         },
         solid: {
           container: {
-            bg: "#6F0B46",
+            bg: "primary",
             color: "white",
           },
         },

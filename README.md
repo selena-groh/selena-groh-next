@@ -1,5 +1,7 @@
 # selena-groh-next
-A website for showcasing my passions for programming, crafting, and stage management. You can see it live at [selenagroh.com](https://www.selenagroh.com/)
+A website for showcasing my passions for programming, crafting, and stage management.
+
+See it live at [selenagroh.com](https://www.selenagroh.com/)!
 
 ## Technologies
 

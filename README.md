@@ -14,6 +14,7 @@ See it live at [selenagroh.com](https://www.selenagroh.com/)!
 ## Local Development
 ```sh
 git clone <repo URL>
+cd selena-groh-next
 yarn
 ```
 

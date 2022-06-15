@@ -1,44 +1,28 @@
-# Next.js example
+# selenagroh.com
+A website for showcasing my passions for programming, crafting, and stage management. You can see it live at [selenagroh.com](https://www.selenagroh.com/)
 
-## How to use
+## Technologies
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+- [Next.js](https://nextjs.org/)
+- [Contentful](https://www.contentful.com/)
+- [Vercel](https://vercel.com/)
+- [React](https://reactjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
 
-<!-- #default-branch-switch -->
-
+## Local Development
 ```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+git clone <repo URL>
+yarn
 ```
 
-Install it and run:
+This application requires Contentful secrets. Get the Contentful Space ID and Access Key from Contentful, and then create a `.env.local` file in the root of the repository that looks like the following:
 
-```sh
-npm install
-npm run dev
+```
+CONTENTFUL_SPACE_ID=space_id_here
+CONTENTFUL_ACCESS_KEY=access_key_here
 ```
 
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/nextjs)
-
-## The idea behind the example
-
-The project uses [Next.js](https://github.com/zeit/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/guides/interoperability/#styled-components).
-
-## The link component
-
-Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
-The example folder provides adapters for usage with MUI.
-More information [in the documentation](https://mui.com/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/getting-started/templates/) section.
+Finally, run the following to get the application running locally:
+```sh
+yarn run dev
+```

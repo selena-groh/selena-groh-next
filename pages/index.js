@@ -43,8 +43,9 @@ const Home = () => {
               I specialize in frontend web design and development, and I have
               experience in a variety of languages and technologies including
               React, CSS, and PHP. I graduated from Tufts University with a
-              double major in Computer Science and Cognitive and Brain Sciences,
-              and I love exploring the intersection of cognition and computers.
+              Bachelor of Science in Computer Science and Cognitive & Brain
+              Sciences, and I love exploring the intersection of cognition and
+              computers.
             </Text>
             <Text>
               I also love the theatre, and I've been involved in stage

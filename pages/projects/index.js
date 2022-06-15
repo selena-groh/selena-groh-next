@@ -60,30 +60,29 @@ const Projects = ({ projects, toolFilters }) => {
       <Heading as="h1" mb={4}>
         Projects
       </Heading>
-      <HStack wrap="wrap" spacing={1} mb={4}>
-        {filters.map((filter) => (
-          <Tag
-            key={filter.name}
-            my={1}
-            borderRadius="full"
-            variant={filter.isActive ? "solid" : "outline"}
-            cursor="pointer"
-            onClick={() =>
-              setFilters((prevFilters) =>
-                prevFilters.map((prevFilter) =>
-                  prevFilter.name === filter.name
-                    ? // Toggle isActive if the filter is the current filter
-                      { ...prevFilter, isActive: !prevFilter.isActive }
-                    : { ...prevFilter }
-                )
+      {filters.map((filter) => (
+        <Tag
+          key={filter.name}
+          my={1}
+          mx={0.5}
+          borderRadius="full"
+          variant={filter.isActive ? "solid" : "outline"}
+          cursor="pointer"
+          onClick={() =>
+            setFilters((prevFilters) =>
+              prevFilters.map((prevFilter) =>
+                prevFilter.name === filter.name
+                  ? // Toggle isActive if the filter is the current filter
+                    { ...prevFilter, isActive: !prevFilter.isActive }
+                  : { ...prevFilter }
               )
-            }
-          >
-            {filter.name}
-          </Tag>
-        ))}
-      </HStack>
-      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4}>
+            )
+          }
+        >
+          {filter.name}
+        </Tag>
+      ))}
+      <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4} mt={4}>
         {filteredProjects.map((project) => (
           <ProjectCard key={project.fields.name} project={project} />
         ))}

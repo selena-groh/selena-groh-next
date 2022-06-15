@@ -19,7 +19,7 @@ const Header = () => {
         alignItems="stretch"
         gap="2"
         bg="primary"
-        px={6}
+        px={{ base: 4, lg: 8 }}
       >
         <Heading mb={0} py={4}>
           <NextLink href="/" passHref>
@@ -33,7 +33,7 @@ const Header = () => {
           <HoverMenu
             menuTrigger={<HeaderLink href="/projects">Projects</HeaderLink>}
             menuItems={subMenuLinks.map((subMenuLink) => (
-              <HeaderSubMenuLink href={subMenuLink.href}>
+              <HeaderSubMenuLink href={subMenuLink.href} key={subMenuLink.name}>
                 {subMenuLink.name}
               </HeaderSubMenuLink>
             ))}

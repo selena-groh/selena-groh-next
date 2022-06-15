@@ -5,10 +5,11 @@ const HoverMenu = ({ menuTrigger, menuItems }) => {
     <Box position="relative" role="group">
       {menuTrigger}
       <Box
+        visibility="hidden"
         opacity={0}
         transition="opacity 200ms"
-        _groupHover={{ opacity: 1 }}
-        _groupFocusWithin={{ opacity: 1 }}
+        _groupHover={{ opacity: 1, visibility: "visible" }}
+        _groupFocusWithin={{ opacity: 1, visibility: "visible" }}
         position="absolute"
         right="0"
         minWidth="300px"

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createClient } from "contentful";
 import Layout from "components/layout/Layout";
 import ProjectCard from "components/projects/ProjectCard";
-import { Heading, HStack, SimpleGrid, Tag } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Tag } from "@chakra-ui/react";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -60,28 +60,30 @@ const Projects = ({ projects, toolFilters }) => {
       <Heading as="h1" mb={4}>
         Projects
       </Heading>
-      {filters.map((filter) => (
-        <Tag
-          key={filter.name}
-          my={1}
-          mx={0.5}
-          borderRadius="full"
-          variant={filter.isActive ? "solid" : "outline"}
-          cursor="pointer"
-          onClick={() =>
-            setFilters((prevFilters) =>
-              prevFilters.map((prevFilter) =>
-                prevFilter.name === filter.name
-                  ? // Toggle isActive if the filter is the current filter
-                    { ...prevFilter, isActive: !prevFilter.isActive }
-                  : { ...prevFilter }
+      <Box>
+        {filters.map((filter) => (
+          <Tag
+            key={filter.name}
+            my={1}
+            mx={0.5}
+            borderRadius="full"
+            variant={filter.isActive ? "solid" : "outline"}
+            cursor="pointer"
+            onClick={() =>
+              setFilters((prevFilters) =>
+                prevFilters.map((prevFilter) =>
+                  prevFilter.name === filter.name
+                    ? // Toggle isActive if the filter is the current filter
+                      { ...prevFilter, isActive: !prevFilter.isActive }
+                    : { ...prevFilter }
+                )
               )
-            )
-          }
-        >
-          {filter.name}
-        </Tag>
-      ))}
+            }
+          >
+            {filter.name}
+          </Tag>
+        ))}
+      </Box>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4} mt={4}>
         {filteredProjects.map((project) => (
           <ProjectCard key={project.fields.name} project={project} />

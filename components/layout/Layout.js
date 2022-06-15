@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "/components/layout/Header";
 import Footer from "/components/layout/Footer";
-import { Flex, Container } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { SkipNavLink, SkipNavContent } from "@chakra-ui/skip-nav";
 
 const Layout = ({ children, title = "" }) => {
@@ -43,17 +43,28 @@ const Layout = ({ children, title = "" }) => {
       <Flex minHeight="100vh" flexDirection="column">
         <SkipNavLink>Skip to content</SkipNavLink>
         <Header />
-        <main>
-          <Container
+        <Box as="main" flexGrow="1">
+          {/* <Container
             flexGrow="1"
             py={{ base: 8, md: 16 }}
             px={4}
             maxWidth="1000px"
+          > */}
+          <SkipNavContent />
+          <Box
+            pb={{ base: 8, md: 16 }}
+            display="grid"
+            gridTemplateColumns="1fr min(1000px, 100%) 1fr"
+            sx={{
+              "& > *": {
+                "grid-column": "2",
+              },
+            }}
           >
-            <SkipNavContent />
             {children}
-          </Container>
-        </main>
+          </Box>
+        </Box>
+        {/* </Container> */}
         <Footer />
       </Flex>
     </>

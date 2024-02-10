@@ -58,14 +58,14 @@ const Hobbies = ({
         <Box mb={8}>
           <Heading as="h2" size="lg">
             <Link href="https://www.goodreads.com/user/show/129465259-selena">
-              What I've Read Recently
+              What I've Been Reading
             </Link>
           </Heading>
           <GoodreadsReadList />
         </Box>
         <Box mb={8}>
           <Heading as="h2" size="lg">
-            What I've Built Recently
+            LEGO Constructs
           </Heading>
           <SimpleGrid columns={{ base: 2, sm: 3 }} columnGap={2}>
             {legoProjects.map((project) => (
@@ -79,20 +79,21 @@ const Hobbies = ({
       </SimpleGrid>
       <Box mb={8}>
         <Heading as="h2" size="lg">
-          Baking
+          Recent Puzzle Favorites
         </Heading>
-        <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} columnGap={2}>
-          {bakingProjects.map((project) => (
-            <ProjectImageWithTooltip
-              project={project}
-              key={project.fields.name}
-            />
-          ))}
-        </SimpleGrid>
+        <iframe
+          class="airtable-embed"
+          src="https://airtable.com/embed/apprSF7eWGARSpeAg/shrwEY63TzK4BSpcE?backgroundColor=purple"
+          frameborder="0"
+          onmousewheel=""
+          width="100%"
+          height="700"
+          style={{ background: "transparent", border: "1px solid #ccc" }}
+        ></iframe>
       </Box>
       <Box mb={8}>
         <Heading as="h2" size="lg">
-          Crafts
+          Crafts & Creations
         </Heading>
         <Box sx={{ columnCount: [2, 3, 4], gap: "8px" }}>
           {craftsProjects.map((project) => (
@@ -104,15 +105,16 @@ const Hobbies = ({
       </Box>
       <Box mb={8}>
         <Heading as="h2" size="lg">
-          Puzzles
+          &ldquo;What Baking Can Do&rdquo;
         </Heading>
-        <Box sx={{ columnCount: [2, 2, 3], gap: "8px" }}>
-          {puzzlesProjects.map((project) => (
-            <Box display="inline-block" width="100%" key={project.fields.name}>
-              <ProjectImageWithTooltip project={project} />
-            </Box>
+        <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} columnGap={2}>
+          {bakingProjects.map((project) => (
+            <ProjectImageWithTooltip
+              project={project}
+              key={project.fields.name}
+            />
           ))}
-        </Box>
+        </SimpleGrid>
       </Box>
     </Layout>
   );

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, LinkBox, LinkOverlay, Tooltip } from "@chakra-ui/react";
 import ConditionalWrapper from "components/utils/ConditionalWrapper";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";

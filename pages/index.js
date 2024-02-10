@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Layout from "components/layout/Layout";
 import PortraitImage from "public/homepage/SelenaGroh.jpg";
 import DesktopHeroImage from "public/homepage/hero-desktop.jpeg";

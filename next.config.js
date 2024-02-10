@@ -14,6 +14,7 @@ module.exports = {
       "hierarchy-linking",
       "drought-map",
       "comp20-sgroh",
+      "bookshelf-css",
     ];
 
     return githubProjects.map((project) => ({

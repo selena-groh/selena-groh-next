@@ -19,7 +19,7 @@ import { FaGithub } from "react-icons/fa";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";
 import LinkBoxCard from "components/LinkBoxCard";
 
-const IMAGE_MAX_WIDTH = 500;
+const IMAGE_MAX_WIDTH = 800;
 
 const options = {
   renderNode: {
@@ -70,7 +70,7 @@ const ProjectCard = ({ project }) => {
               </Link>
             )}
           </Flex>
-          <Text>{documentToReactComponents(fields.description, options)}</Text>
+          <div>{documentToReactComponents(fields.description, options)}</div>
           <Box display="flex" flexWrap="wrap" gap={2}>
             {fields.toolsUsed.map((tool) => (
               <Tag key={tool}>{tool}</Tag>

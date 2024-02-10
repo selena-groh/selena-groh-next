@@ -6,6 +6,7 @@ import HeaderSubMenuLink from "components/layout/HeaderSubMenuLink";
 
 const Header = () => {
   const subMenuLinks = [
+    { name: "Bookshelf CSS", href: "/bookshelf-css" },
     { name: "Guess Who, Stardew?", href: "/guess-who-stardew" },
     { name: "Guess Who, Anne?", href: "/guess-who-anne" },
     { name: "Spelling Bee", href: "/spelling-bee" },

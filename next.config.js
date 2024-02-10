@@ -1,5 +1,13 @@
 module.exports = {
-  images: { domains: ["images.ctfassets.net"] },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        pathname: "**",
+      },
+    ],
+  },
   async redirects() {
     const githubProjectURL = "https://selena-groh.github.io/";
 
@@ -14,6 +22,7 @@ module.exports = {
       "hierarchy-linking",
       "drought-map",
       "comp20-sgroh",
+      "bookshelf-css",
     ];
 
     return githubProjects.map((project) => ({

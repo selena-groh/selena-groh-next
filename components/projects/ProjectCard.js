@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import NextLink from "next/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES } from "@contentful/rich-text-types";
@@ -42,7 +42,7 @@ const ProjectCard = ({ project }) => {
       <LinkBoxCard>
         <VStack spacing={3} alignItems="flex-start">
           <Heading as="h3" size="md">
-            <NextLink href={primaryLink} passHref>
+            <NextLink href={primaryLink} passHref legacyBehavior>
               <LinkOverlay isExternal>{fields.name}</LinkOverlay>
             </NextLink>
           </Heading>

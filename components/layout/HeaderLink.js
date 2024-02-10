@@ -3,7 +3,7 @@ import { Box, Link } from "@chakra-ui/react";
 
 const HeaderLink = ({ href, children }) => (
   <Box display="flex" alignItems="center" height="100%" px={{ base: 2, sm: 6 }}>
-    <NextLink href={href} passHref>
+    <NextLink href={href} passHref legacyBehavior>
       <Link variant="inverse">{children}</Link>
     </NextLink>
   </Box>

@@ -9,23 +9,25 @@ const Home = () => {
   return (
     <Layout>
       <Box
-        width="min(100%, 1760px)"
-        mx="auto"
+        position="relative"
         sx={{
           // Needed for extra specificity
           "&&": {
             gridColumn: "1 / 4",
           },
         }}
-        position="relative"
+        // Countering margin top from Layout.tsx
+        mt={{ base: "-24px", md: "-32px" }}
         mb={8}
+        // Centers image when on very large screens
+        mx="auto"
       >
         <Box display={{ base: "block", md: "none" }}>
           <Image
             src={MobileHeroImage}
             alt="Selena standing in front of a Hobbit hole"
-            width={3072}
-            height={4080}
+            width={1760}
+            height={2338}
             placeholder="blur"
           />
         </Box>
@@ -33,8 +35,8 @@ const Home = () => {
           <Image
             src={DesktopHeroImage}
             alt="Selena standing in front of a Hobbit hole"
-            width={4032}
-            height={2079}
+            width={1760}
+            height={908}
             placeholder="blur"
           />
         </Box>
@@ -63,7 +65,7 @@ const Home = () => {
           </Heading>
         </Box>
       </Box>
-      <Box px={4}>
+      <Box>
         <Box display={{ base: "block", lg: "none" }}>
           <Heading as="h1" size="2xl">
             Hi, I'm Selena!

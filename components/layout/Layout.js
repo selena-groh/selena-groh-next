@@ -52,9 +52,13 @@ const Layout = ({ children, title = "" }) => {
           > */}
           <SkipNavContent />
           <Box
-            pb={{ base: 8, md: 16 }}
+            mt={{ base: 6, md: 8 }}
+            mb={{ base: 12, md: 16 }}
             display="grid"
-            gridTemplateColumns="1fr min(1000px, 100%) 1fr"
+            gridTemplateColumns={{
+              base: "1fr min(1000px, 90%) 1fr",
+              lg: "1fr min(1000px, 96%) 1fr",
+            }}
             sx={{
               "& > *": {
                 gridColumn: "2",

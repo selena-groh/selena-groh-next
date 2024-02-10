@@ -1,10 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const primaryColor = "#6F0B46";
+const primaryLightColor = "#9a547d";
+const secondaryColor = "#1B4965";
 
 const theme = extendTheme({
   colors: {
     primary: primaryColor,
+    primaryLight: primaryLightColor,
+    secondary: secondaryColor,
   },
   fonts: {
     body: "system-ui, sans-serif",

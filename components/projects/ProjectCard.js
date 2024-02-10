@@ -42,7 +42,7 @@ const ProjectCard = ({ project }) => {
       <LinkBoxCard>
         <VStack spacing={3} alignItems="flex-start">
           <Heading as="h3" size="md">
-            <NextLink href={primaryLink} passHref>
+            <NextLink href={primaryLink} passHref legacyBehavior>
               <LinkOverlay isExternal>{fields.name}</LinkOverlay>
             </NextLink>
           </Heading>

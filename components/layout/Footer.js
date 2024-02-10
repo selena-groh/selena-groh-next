@@ -18,7 +18,7 @@ const Footer = () => {
         <Heading size="lg" mb={4}>
           Selena Groh
         </Heading>
-        <NextLink href="mailto:contact@selenagroh.com" passHref>
+        <NextLink href="mailto:contact@selenagroh.com" passHref legacyBehavior>
           <Link mb={4} variant="inverse">
             contact@selenagroh.com
           </Link>

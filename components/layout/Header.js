@@ -23,7 +23,7 @@ const Header = () => {
         px={{ base: 4, lg: 8 }}
       >
         <Heading mb={0} py={4}>
-          <NextLink href="/" passHref>
+          <NextLink href="/" passHref legacyBehavior>
             <Link _hover={{ textUnderline: "none" }} variant="inverse">
               Selena Groh
             </Link>

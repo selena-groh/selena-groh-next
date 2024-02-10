@@ -18,8 +18,10 @@ const HoverMenu = ({ menuTrigger, menuItems }) => {
         zIndex="100"
         textAlign="right"
       >
-        {menuItems.map((item) => (
-          <Box py={2}>{item}</Box>
+        {menuItems.map((item, index) => (
+          <Box key={index} py={2}>
+            {item}
+          </Box>
         ))}
       </Box>
     </Box>

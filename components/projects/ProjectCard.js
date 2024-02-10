@@ -70,7 +70,7 @@ const ProjectCard = ({ project }) => {
               </Link>
             )}
           </Flex>
-          <Text>{documentToReactComponents(fields.description, options)}</Text>
+          <div>{documentToReactComponents(fields.description, options)}</div>
           <Box display="flex" flexWrap="wrap" gap={2}>
             {fields.toolsUsed.map((tool) => (
               <Tag key={tool}>{tool}</Tag>

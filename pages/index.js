@@ -46,12 +46,7 @@ const Home = () => {
           top="0%"
           left="0%"
           color="gray.800"
-          // color="white"
-          // textShadow="1px 1px #555"
-          // backgroundColor="rgba(0,0,0,0.5);"
-          // backgroundImage="linear-gradient(rgba(253, 244, 220,0.9), rgba(253, 244, 220,0) 100%)"
           backgroundImage="linear-gradient(rgba(255, 239, 204,0.9), rgba(255, 239, 204,0) 100%)"
-          // backgroundImage="linear-gradient(rgba(128,128,128,1), rgba(128,128,128,0) 100%)"
           p={8}
           height="50%"
           width="100%"

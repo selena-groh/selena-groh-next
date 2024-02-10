@@ -44,12 +44,6 @@ const Layout = ({ children, title = "" }) => {
         <SkipNavLink>Skip to content</SkipNavLink>
         <Header />
         <Box as="main" flexGrow="1">
-          {/* <Container
-            flexGrow="1"
-            py={{ base: 8, md: 16 }}
-            px={4}
-            maxWidth="1000px"
-          > */}
           <SkipNavContent />
           <Box
             mt={{ base: 6, md: 8 }}
@@ -68,7 +62,6 @@ const Layout = ({ children, title = "" }) => {
             {children}
           </Box>
         </Box>
-        {/* </Container> */}
         <Footer />
       </Flex>
     </>

@@ -13,16 +13,15 @@ const HoverMenu = ({ menuTrigger, menuItems }) => {
         position="absolute"
         right="0"
         minWidth="300px"
-        backgroundColor="primary"
-        p={6}
+        backgroundColor="primaryLight"
+        p={3}
         zIndex="100"
         textAlign="right"
+        display="flex"
+        flexDirection="column"
+        gap={2}
       >
-        {menuItems.map((item, index) => (
-          <Box key={index} py={2}>
-            {item}
-          </Box>
-        ))}
+        {menuItems}
       </Box>
     </Box>
   );

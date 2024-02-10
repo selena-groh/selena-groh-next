@@ -29,16 +29,6 @@ const Layout = ({ children, title = "" }) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,400;8..144,600&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Flex minHeight="100vh" flexDirection="column">
         <SkipNavLink>Skip to content</SkipNavLink>

@@ -19,7 +19,7 @@ import { FaGithub } from "react-icons/fa";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";
 import LinkBoxCard from "components/LinkBoxCard";
 
-const IMAGE_MAX_WIDTH = 500;
+const IMAGE_MAX_WIDTH = 800;
 
 const options = {
   renderNode: {

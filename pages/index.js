@@ -1,31 +1,43 @@
 import Image from "next/image";
 import Layout from "components/layout/Layout";
 import PortraitImage from "public/homepage/SelenaGroh.jpg";
-import HeroImage from "public/homepage/hero.png";
+import DesktopHeroImage from "public/homepage/hero-desktop.jpeg";
+import MobileHeroImage from "public/homepage/hero-mobile.jpeg";
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 
 const Home = () => {
   return (
     <Layout>
       <Box
-        width="min(100%, 1600px)"
+        width="min(100%, 1760px)"
         mx="auto"
         sx={{
           // Needed for extra specificity
           "&&": {
-            "grid-column": "1 / 4",
+            gridColumn: "1 / 4",
           },
         }}
         position="relative"
         mb={8}
       >
-        <Image
-          src={HeroImage}
-          alt="woman standing in front of a waterfall"
-          width={4032}
-          height={2129}
-          placeholder="blur"
-        />
+        <Box display={{ base: "block", md: "none" }}>
+          <Image
+            src={MobileHeroImage}
+            alt="Selena standing in front of a Hobbit hole"
+            width={3072}
+            height={4080}
+            placeholder="blur"
+          />
+        </Box>
+        <Box display={{ base: "none", md: "block" }}>
+          <Image
+            src={DesktopHeroImage}
+            alt="Selena standing in front of a Hobbit hole"
+            width={4032}
+            height={2079}
+            placeholder="blur"
+          />
+        </Box>
         <Box
           display={{ base: "none", lg: "block" }}
           position="absolute"

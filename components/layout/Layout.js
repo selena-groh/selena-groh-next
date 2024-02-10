@@ -57,7 +57,7 @@ const Layout = ({ children, title = "" }) => {
             gridTemplateColumns="1fr min(1000px, 100%) 1fr"
             sx={{
               "& > *": {
-                "grid-column": "2",
+                gridColumn: "2",
               },
             }}
           >

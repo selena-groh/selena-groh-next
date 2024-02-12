@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import Layout from "components/layout/Layout";
 import ProjectCard from "components/projects/ProjectCard";
 import { Box, Heading, SimpleGrid, Tag } from "@chakra-ui/react";
+import FadeIn from "components/FadeIn";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -85,8 +86,10 @@ const Projects = ({ projects, toolFilters }) => {
         ))}
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4} mt={4}>
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.fields.name} project={project} />
+        {filteredProjects.map((project, index) => (
+          <FadeIn delay={index % 2 === 0 ? 0 : 0.1}>
+            <ProjectCard key={project.fields.name} project={project} />
+          </FadeIn>
         ))}
       </SimpleGrid>
     </Layout>

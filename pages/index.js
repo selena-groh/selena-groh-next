@@ -1,9 +1,8 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Layout from "components/layout/Layout";
-import PortraitImage from "public/homepage/SelenaGroh.jpg";
 import DesktopHeroImage from "public/homepage/hero-desktop.jpeg";
 import MobileHeroImage from "public/homepage/hero-mobile.jpeg";
-import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import FadeIn from "components/FadeIn";
 
 const Home = () => {
@@ -28,16 +27,24 @@ const Home = () => {
           <Image
             src={MobileHeroImage}
             priority
-            layout="responsive"
             alt="Selena standing in front of a wooden archway with flowers"
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Box>
         <Box width="100%" display={{ base: "none", md: "block" }}>
           <Image
             src={DesktopHeroImage}
             priority
-            layout="responsive"
             alt="Selena standing in front of a Hobbit hole"
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
         </Box>
         <Box

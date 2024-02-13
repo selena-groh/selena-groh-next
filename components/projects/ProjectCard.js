@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import NextLink from "next/link";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES } from "@contentful/rich-text-types";
@@ -52,8 +52,12 @@ const ProjectCard = ({ project }) => {
               width={fields.icon.fields.file.details.image.width}
               height={fields.icon.fields.file.details.image.height}
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII=" // This is just a gray overlay while image is loading
-            />
+              // This is just a gray overlay while image is loading
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII="
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <Box position="absolute" top="0" right="0">
               <ZoomButton
                 onClick={() => setIsZoomModalOpen(true)}

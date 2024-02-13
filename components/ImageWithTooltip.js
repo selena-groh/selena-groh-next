@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Box, LinkBox, LinkOverlay, Tooltip } from "@chakra-ui/react";
 import ConditionalWrapper from "components/utils/ConditionalWrapper";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";
@@ -31,8 +31,12 @@ const ImageWithTooltip = ({ alt, tooltip, image, link }) => {
               height={image.fields.file.details.image.height}
               alt={alt}
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII=" // This is just a gray overlay while image is loading
-            />
+              // This is just a gray overlay while image is loading
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII="
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </ConditionalWrapper>
           <Box position="absolute" top="0" right="0">
             <ZoomButton onClick={() => setIsZoomModalOpen(true)} />

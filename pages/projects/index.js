@@ -87,7 +87,7 @@ const Projects = ({ projects, toolFilters }) => {
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4} mt={4}>
         {filteredProjects.map((project, index) => (
-          <FadeIn delay={index % 2 === 0 ? 0 : 0.1}>
+          <FadeIn delay={index % 2 === 0 ? 0 : 0.2}>
             <ProjectCard key={project.fields.name} project={project} />
           </FadeIn>
         ))}

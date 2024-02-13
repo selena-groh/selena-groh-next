@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-function FadeIn({ delay, children }) {
+function FadeIn({ duration = 0.6, delay = 0, children }) {
   return (
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={{
         offscreen: {
           opacity: 0,
@@ -16,10 +16,9 @@ function FadeIn({ delay, children }) {
           y: 0,
           transition: {
             type: "tween",
-            // bounce: 0.4,
             delay,
-            duration: 0.4,
-            opacity: { duration: 0.6 },
+            duration: duration * (2 / 3),
+            opacity: { duration },
           },
         },
       }}

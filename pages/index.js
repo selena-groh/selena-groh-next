@@ -4,6 +4,7 @@ import PortraitImage from "public/homepage/SelenaGroh.jpg";
 import DesktopHeroImage from "public/homepage/hero-desktop.jpeg";
 import MobileHeroImage from "public/homepage/hero-mobile.jpeg";
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import FadeIn from "components/FadeIn";
 
 const Home = () => {
   return (
@@ -16,28 +17,27 @@ const Home = () => {
             gridColumn: "1 / 4",
           },
         }}
+        width="100%"
         // Countering margin top from Layout.tsx
         mt={{ base: "-24px", md: "-32px" }}
         mb={8}
         // Centers image when on very large screens
         mx="auto"
       >
-        <Box display={{ base: "block", md: "none" }}>
+        <Box width="100%" display={{ base: "block", md: "none" }}>
           <Image
             src={MobileHeroImage}
-            alt="Selena standing in front of a Hobbit hole"
-            width={1760}
-            height={2338}
-            placeholder="blur"
+            priority
+            layout="responsive"
+            alt="Selena standing in front of a wooden archway with flowers"
           />
         </Box>
-        <Box display={{ base: "none", md: "block" }}>
+        <Box width="100%" display={{ base: "none", md: "block" }}>
           <Image
             src={DesktopHeroImage}
+            priority
+            layout="responsive"
             alt="Selena standing in front of a Hobbit hole"
-            width={1760}
-            height={908}
-            placeholder="blur"
           />
         </Box>
         <Box
@@ -51,50 +51,55 @@ const Home = () => {
           height="50%"
           width="100%"
         >
-          <Heading as="h1" size="2xl">
-            Hi, I'm Selena!
-          </Heading>
-          <Heading as="h2" fontWeight="normal">
-            I'm a software developer, maker, and stage manager based in Boston,
-            MA.
-          </Heading>
+          <FadeIn duration={1}>
+            <Heading as="h1" size="2xl">
+              Hi, I'm Selena!
+            </Heading>
+            <Heading as="h2" fontWeight="normal">
+              I'm a software developer, maker, and stage manager based in
+              Boston, MA.
+            </Heading>
+          </FadeIn>
         </Box>
       </Box>
       <Box>
-        <Box display={{ base: "block", lg: "none" }}>
-          <Heading as="h1" size="2xl">
-            Hi, I'm Selena!
-          </Heading>
-          <Heading as="h2">
-            I'm a software developer, maker, and stage manager based in Boston,
-            MA.
-          </Heading>
-        </Box>
-        <VStack spacing={4} align="flex-start">
-          <Heading as="p" size="lg">
-            Currently, I'm a full-stack software engineer at Wayfair. I'm an
-            avid baker, problem solver, and maker. I was born and raised near
-            Chicago, IL (and therefore I'm very passionate about deep-dish
-            pizza).
-          </Heading>
-          <Text>
-            I specialize in frontend web design and development, and I have
-            experience in a variety of languages and technologies including
-            React, CSS, and PHP. I graduated from Tufts University with a
-            Bachelor of Science in Computer Science and Cognitive & Brain
-            Sciences, and I love exploring the intersection of cognition and
-            computers.
-          </Text>
-          <Text>
-            I also love the theatre, and I've been involved in stage management,
-            set construction, and producing. I believe good design is essential,
-            whether it's in posters or organizational spreadsheets.
-          </Text>
-          <Text>
-            I spend my free time crocheting, hiking, solving crosswords, and
-            drinking hot chocolate no matter the season.
-          </Text>
-        </VStack>
+        <FadeIn duration={1}>
+          <Box display={{ base: "block", lg: "none" }}>
+            <Heading as="h1" size="2xl">
+              Hi, I'm Selena!
+            </Heading>
+            <Heading as="h2">
+              I'm a software developer, maker, and stage manager based in
+              Boston, MA.
+            </Heading>
+          </Box>
+          <VStack spacing={4} align="flex-start">
+            <Heading as="p" size="lg">
+              Currently, I'm a full-stack software engineer at Wayfair. I'm an
+              avid baker, problem solver, and maker. I was born and raised near
+              Chicago, IL (and therefore I'm very passionate about deep-dish
+              pizza).
+            </Heading>
+            <Text>
+              I specialize in frontend web design and development, and I have
+              experience in a variety of languages and technologies including
+              React, CSS, and PHP. I graduated from Tufts University with a
+              Bachelor of Science in Computer Science and Cognitive & Brain
+              Sciences, and I love exploring the intersection of cognition and
+              computers.
+            </Text>
+            <Text>
+              I also love the theatre, and I've been involved in stage
+              management, set construction, and producing. I believe good design
+              is essential, whether it's in posters or organizational
+              spreadsheets.
+            </Text>
+            <Text>
+              I spend my free time crocheting, hiking, solving crosswords, and
+              drinking hot chocolate no matter the season.
+            </Text>
+          </VStack>
+        </FadeIn>
       </Box>
     </Layout>
   );

@@ -25,6 +25,7 @@ const HoverMenu = ({ menuTrigger, menuItems }) => {
         right="0"
         minWidth="300px"
         borderRadius="0 0 8px 8px"
+        // From https://getcssscan.com/css-box-shadow-examples #18 by Stripe
         boxShadow="rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
         backgroundColor="primaryLight"
         p={3}

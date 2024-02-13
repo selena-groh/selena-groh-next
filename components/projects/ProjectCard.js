@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
     fields.gitHubLink && primaryLink !== fields.gitHubLink;
 
   return (
-    <Box key={fields.slug} display="flex">
+    <Box key={fields.slug} display="flex" height="100%">
       <LinkBoxCard>
         <VStack spacing={3} alignItems="flex-start">
           <Heading as="h3" size="md">
@@ -56,8 +56,9 @@ const ProjectCard = ({ project }) => {
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII="
               style={{
                 maxWidth: "100%",
-                height: "auto"
-              }} />
+                height: "auto",
+              }}
+            />
             <Box position="absolute" top="0" right="0">
               <ZoomButton
                 onClick={() => setIsZoomModalOpen(true)}

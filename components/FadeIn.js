@@ -9,11 +9,11 @@ function FadeIn({ duration = 0.6, delay = 0, children }) {
       variants={{
         offscreen: {
           opacity: 0,
-          y: 50,
+          scale: 1.02,
         },
         onscreen: {
           opacity: 1,
-          y: 0,
+          scale: 1,
           transition: {
             type: "tween",
             delay,

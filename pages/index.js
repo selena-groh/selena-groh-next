@@ -23,30 +23,32 @@ const Home = () => {
         // Centers image when on very large screens
         mx="auto"
       >
-        <Box width="100%" display={{ base: "block", md: "none" }}>
-          <Image
-            src={MobileHeroImage}
-            priority
-            alt="Selena standing in front of a wooden archway with flowers"
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-          />
-        </Box>
-        <Box width="100%" display={{ base: "none", md: "block" }}>
-          <Image
-            src={DesktopHeroImage}
-            priority
-            alt="Selena standing in front of a Hobbit hole"
-            sizes="100vw"
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-          />
-        </Box>
+        <FadeIn duration={1}>
+          <Box width="100%" display={{ base: "block", md: "none" }}>
+            <Image
+              src={MobileHeroImage}
+              priority
+              alt="Selena standing in front of a wooden archway with flowers"
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </Box>
+          <Box width="100%" display={{ base: "none", md: "block" }}>
+            <Image
+              src={DesktopHeroImage}
+              priority
+              alt="Selena standing in front of a Hobbit hole"
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </Box>
+        </FadeIn>
         <Box
           display={{ base: "none", lg: "block" }}
           position="absolute"

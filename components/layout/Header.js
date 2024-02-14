@@ -6,11 +6,41 @@ import HeaderSubMenuLink from "components/layout/HeaderSubMenuLink";
 
 const Header = () => {
   const subMenuLinks = [
-    { name: "Bookshelf CSS", href: "/bookshelf-css" },
-    { name: "Guess Who, Stardew?", href: "/guess-who-stardew" },
-    { name: "Guess Who, Anne?", href: "/guess-who-anne" },
-    { name: "Spelling Bee", href: "/spelling-bee" },
-    { name: "Wordle", href: "/wordle" },
+    {
+      name: "Bookshelf CSS",
+      href: "/bookshelf-css",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      prefetch: false,
+    },
+    {
+      name: "Guess Who, Stardew?",
+      href: "/guess-who-stardew",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      prefetch: false,
+    },
+    {
+      name: "Guess Who, Anne?",
+      href: "/guess-who-anne",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      prefetch: false,
+    },
+    {
+      name: "Spelling Bee",
+      href: "/spelling-bee",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      prefetch: false,
+    },
+    {
+      name: "Wordle",
+      href: "/wordle",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      prefetch: false,
+    },
   ];
 
   return (
@@ -31,9 +61,9 @@ const Header = () => {
         <Box display="flex" alignItems="stretch">
           <HoverMenu
             menuTrigger={<HeaderLink href="/projects">Projects</HeaderLink>}
-            menuItems={subMenuLinks.map((subMenuLink) => (
-              <HeaderSubMenuLink href={subMenuLink.href} key={subMenuLink.name}>
-                {subMenuLink.name}
+            menuItems={subMenuLinks.map(({ name, href, ...linkProps }) => (
+              <HeaderSubMenuLink key={name} href={href} {...linkProps}>
+                {name}
               </HeaderSubMenuLink>
             ))}
           />

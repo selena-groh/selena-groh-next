@@ -1,6 +1,30 @@
-import Script from "next/script";
+import { useEffect } from "react";
+
+// Custom hook to add script on component mount
+const useScript = ({ src, type }) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src = src;
+    script.type = type;
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [src, type]);
+};
 
 const GoodreadsReadList = () => {
+  // Add Goodreads script. We can't use next/script because the script needs to
+  // run on this component's mount so that #gr_grid_widget_1651799796 is present
+  useScript({
+    src: "https://www.goodreads.com/review/grid_widget/129465259.What%20I've%20Read%20Recently?cover_size=medium&hide_link=true&hide_title=true&num_books=12&order=d&shelf=read&sort=date_read&widget_id=1651799796",
+    type: "text/javascript",
+  });
+
   return (
     <div>
       <style type="text/css" media="screen">
@@ -18,7 +42,7 @@ const GoodreadsReadList = () => {
       <div id="gr_grid_widget_1651799796">
         {/* <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work --> */}
         <div className="gr_grid_container">
-          {/* <div className="gr_grid_book_container">
+          <div className="gr_grid_book_container">
             <a
               title="Battle Royale"
               rel="nofollow"
@@ -173,14 +197,9 @@ const GoodreadsReadList = () => {
                 src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507307833l/34002132._SX98_.jpg"
               />
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
-      <Script
-        src="https://www.goodreads.com/review/grid_widget/129465259.What%20I've%20Read%20Recently?cover_size=medium&hide_link=true&hide_title=true&num_books=12&order=d&shelf=read&sort=date_read&widget_id=1651799796"
-        type="text/javascript"
-        charset="utf-8"
-      />
     </div>
   );
 };

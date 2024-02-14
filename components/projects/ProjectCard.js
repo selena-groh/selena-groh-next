@@ -48,6 +48,7 @@ const ProjectCard = ({ project }) => {
           <Box position="relative">
             <Image
               src={`https:${fields.icon.fields.file.url}?w=${IMAGE_MAX_WIDTH}`}
+              alt=""
               width={fields.icon.fields.file.details.image.width}
               height={fields.icon.fields.file.details.image.height}
               placeholder="blur"

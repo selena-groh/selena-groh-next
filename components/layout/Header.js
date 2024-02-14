@@ -1,5 +1,5 @@
-import NextLink from "next/link";
-import { Box, Flex, Heading, Link, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 import HoverMenu from "components/HoverMenu";
 import HeaderLink from "components/layout/HeaderLink";
 import HeaderSubMenuLink from "components/layout/HeaderSubMenuLink";
@@ -23,11 +23,9 @@ const Header = () => {
         px={{ base: 4, lg: 8 }}
       >
         <Heading mb={0} py={4}>
-          <NextLink href="/" passHref legacyBehavior>
-            <Link _hover={{ textUnderline: "none" }} variant="inverse">
-              Selena Groh
-            </Link>
-          </NextLink>
+          <Link href="/" _hover={{ textUnderline: "none" }} variant="inverse">
+            Selena Groh
+          </Link>
         </Heading>
         <Spacer />
         <Box display="flex" alignItems="stretch">

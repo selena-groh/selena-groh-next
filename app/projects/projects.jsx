@@ -1,39 +1,9 @@
+"use client";
+
 import { useState } from "react";
-import { createClient } from "contentful";
-import Layout from "components/layout/Layout";
 import ProjectCard from "components/projects/ProjectCard";
-import { Box, Heading, SimpleGrid, Tag } from "@chakra-ui/react";
+import { Box, SimpleGrid, Tag } from "@chakra-ui/react";
 import FadeIn from "components/FadeIn";
-
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  });
-
-  const res = await client.getEntries({
-    content_type: "project",
-    order: "-fields.dateCompleted",
-  });
-
-  const projects = res.items;
-  // Get list of all Tools Used and then Set makes unique
-  const toolFilterOptions = [
-    ...new Set(projects.flatMap((project) => project.fields.toolsUsed)),
-  ];
-
-  const toolFilters = toolFilterOptions.map((toolFilterOption) => ({
-    name: toolFilterOption,
-    isActive: false,
-  }));
-
-  return {
-    props: {
-      projects,
-      toolFilters,
-    },
-  };
-}
 
 const Projects = ({ projects, toolFilters }) => {
   const [filters, setFilters] = useState(toolFilters);
@@ -57,10 +27,7 @@ const Projects = ({ projects, toolFilters }) => {
   const filteredProjects = getFilteredProjects();
 
   return (
-    <Layout title="Projects">
-      <Heading as="h1" mb={4}>
-        Projects
-      </Heading>
+    <>
       <Box>
         {filters.map((filter) => (
           <Tag
@@ -87,12 +54,12 @@ const Projects = ({ projects, toolFilters }) => {
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={4} mt={4}>
         {filteredProjects.map((project, index) => (
-          <FadeIn delay={index % 2 === 0 ? 0 : 0.2}>
-            <ProjectCard key={project.fields.name} project={project} />
+          <FadeIn key={project.fields.name} delay={index % 2 === 0 ? 0 : 0.2}>
+            <ProjectCard project={project} />
           </FadeIn>
         ))}
       </SimpleGrid>
-    </Layout>
+    </>
   );
 };
 

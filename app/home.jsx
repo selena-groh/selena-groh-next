@@ -1,5 +1,7 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
-import Layout from "components/layout/Layout";
 import DesktopHeroImage from "public/homepage/hero-desktop.jpeg";
 import MobileHeroImage from "public/homepage/hero-mobile.jpeg";
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
@@ -7,7 +9,7 @@ import FadeIn from "components/FadeIn";
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <Box
         position="relative"
         sx={{
@@ -110,7 +112,7 @@ const Home = () => {
           </VStack>
         </FadeIn>
       </Box>
-    </Layout>
+    </>
   );
 };
 

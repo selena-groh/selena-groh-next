@@ -12,7 +12,7 @@ const theme = extendTheme({
   },
   fonts: {
     body: "system-ui, sans-serif",
-    heading: "Roboto Serif, serif",
+    heading: "var(--font-roboto-serif)",
     mono: "Menlo, monospace",
   },
   components: {

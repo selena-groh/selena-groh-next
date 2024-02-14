@@ -18,7 +18,7 @@ const GoodreadsReadList = () => {
       <div id="gr_grid_widget_1651799796">
         {/* <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work --> */}
         <div className="gr_grid_container">
-          <div className="gr_grid_book_container">
+          {/* <div className="gr_grid_book_container">
             <a
               title="Battle Royale"
               rel="nofollow"
@@ -173,7 +173,7 @@ const GoodreadsReadList = () => {
                 src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507307833l/34002132._SX98_.jpg"
               />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
       <Script

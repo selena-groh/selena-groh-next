@@ -1,11 +1,11 @@
-import NextLink from "next/link";
-import { Box, Link } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 
 const HeaderLink = ({ href, children }) => (
   <Box display="flex" alignItems="center" height="100%" px={{ base: 2, sm: 6 }}>
-    <NextLink href={href} passHref legacyBehavior>
-      <Link variant="inverse">{children}</Link>
-    </NextLink>
+    <Link href={href} variant="inverse">
+      {children}
+    </Link>
   </Box>
 );
 

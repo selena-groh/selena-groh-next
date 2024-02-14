@@ -51,6 +51,7 @@ const Hobbies = ({
             Recent Puzzle Favorites
           </Heading>
           <iframe
+            title="Gallery View of Top Puzzles"
             src="https://airtable.com/embed/apprSF7eWGARSpeAg/shrwEY63TzK4BSpcE"
             width="100%"
             height="700"

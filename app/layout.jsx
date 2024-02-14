@@ -10,6 +10,8 @@ export const metadata = {
     template: "%s | Selena Groh",
     default: "Selena Groh", // a default is required when creating a template
   },
+  description:
+    "Hi, I'm Selena. I'm a software developer, maker, and stage manager based in Boston, MA.",
 };
 
 export default function RootLayout({

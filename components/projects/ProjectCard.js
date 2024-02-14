@@ -43,7 +43,7 @@ const ProjectCard = ({ project }) => {
               {fields.name}
             </LinkOverlay>
           </Heading>
-          <Box position="relative">
+          <Box position="relative" width="100%">
             <Image
               src={`https:${fields.icon.fields.file.url}`}
               alt=""

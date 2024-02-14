@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => {
               placeholder="blur"
               // This is just a gray overlay while image is loading
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII="
-              sizes="(max-width: 48em) 90vw, (max-width: 1040px) 50vw, 450px"
+              sizes="(min-width: 1040px) 450px, (min-width: 48em) 50vw, 90vw"
               style={{
                 width: "100%",
                 height: "auto",

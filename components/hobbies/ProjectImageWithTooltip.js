@@ -1,7 +1,7 @@
 import ImageWithTooltip from "components/ImageWithTooltip";
 import TitleDate from "components/hobbies/TitleDate";
 
-const ProjectImageWithTooltip = ({ project }) => {
+const ProjectImageWithTooltip = ({ project, ...imageProps }) => {
   return (
     <ImageWithTooltip
       alt={project.fields.name}
@@ -13,6 +13,7 @@ const ProjectImageWithTooltip = ({ project }) => {
       }
       image={project.fields.mainImage}
       link={project.fields.link}
+      {...imageProps}
     />
   );
 };

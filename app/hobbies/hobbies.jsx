@@ -36,8 +36,9 @@ const Hobbies = ({
             <SimpleGrid columns={{ base: 2, sm: 3 }} columnGap={2}>
               {legoProjects.map((project) => (
                 <ProjectImageWithTooltip
-                  project={project}
                   key={project.fields.name}
+                  project={project}
+                  sizes="(min-width: 48em) 190px, (min-width: 30em) 30vw, 45vw"
                 />
               ))}
             </SimpleGrid>
@@ -68,7 +69,10 @@ const Hobbies = ({
                 width="100%"
                 key={project.fields.name}
               >
-                <ProjectImageWithTooltip project={project} />
+                <ProjectImageWithTooltip
+                  project={project}
+                  sizes="(min-width: 1040px) 245px, (min-width: 48em) 24vw, (min-width: 30em) 30vw, 45vw"
+                />
               </Box>
             ))}
           </Box>
@@ -82,8 +86,9 @@ const Hobbies = ({
           <SimpleGrid columns={{ base: 2, sm: 3, md: 4, lg: 5 }} columnGap={2}>
             {bakingProjects.map((project) => (
               <ProjectImageWithTooltip
-                project={project}
                 key={project.fields.name}
+                project={project}
+                sizes="(min-width: 1040px) 194px, (min-width: 62em) 20vw, (min-width: 48em) 23vw, (min-width: 30em) 30vw, 45vw"
               />
             ))}
           </SimpleGrid>

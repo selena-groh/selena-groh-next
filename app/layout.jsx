@@ -1,5 +1,6 @@
 import React from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { fonts } from "./fonts";
 import Layout from "components/layout/Layout";
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Layout>{children}</Layout>
         </Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

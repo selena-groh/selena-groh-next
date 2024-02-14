@@ -50,12 +50,10 @@ const Hobbies = ({
             Recent Puzzle Favorites
           </Heading>
           <iframe
-            className="airtable-embed"
-            src="https://airtable.com/embed/apprSF7eWGARSpeAg/shrwEY63TzK4BSpcE?backgroundColor=purple"
+            src="https://airtable.com/embed/apprSF7eWGARSpeAg/shrwEY63TzK4BSpcE"
             width="100%"
             height="700"
-            style={{ background: "transparent", border: "1px solid #ccc" }}
-          ></iframe>
+          />
         </Box>
       </FadeIn>
       <FadeIn>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function FadeIn({ duration = 0.6, delay = 0, children }) {
+function FadeIn({ duration = 0.8, delay = 0, children }) {
   return (
     <motion.div
       initial="offscreen"

@@ -18,8 +18,6 @@ import { FaGithub } from "react-icons/fa";
 import { ZoomButton, ZoomModal } from "components/ZoomModal";
 import LinkBoxCard from "components/LinkBoxCard";
 
-const IMAGE_MAX_WIDTH = 800;
-
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => (
@@ -40,22 +38,23 @@ const ProjectCard = ({ project }) => {
     <Box key={fields.slug} display="flex" height="100%">
       <LinkBoxCard>
         <VStack spacing={3} alignItems="flex-start">
-          <Heading as="h3" size="md">
+          <Heading as="h2" size="md">
             <LinkOverlay href={primaryLink} isExternal>
               {fields.name}
             </LinkOverlay>
           </Heading>
           <Box position="relative">
             <Image
-              src={`https:${fields.icon.fields.file.url}?w=${IMAGE_MAX_WIDTH}`}
+              src={`https:${fields.icon.fields.file.url}`}
               alt=""
               width={fields.icon.fields.file.details.image.width}
               height={fields.icon.fields.file.details.image.height}
               placeholder="blur"
               // This is just a gray overlay while image is loading
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWg8AAe8BNu73HEoAAAAASUVORK5CYII="
+              sizes="(max-width: 48em) 90vw, (max-width: 1040px) 50vw, 450px"
               style={{
-                maxWidth: "100%",
+                width: "100%",
                 height: "auto",
               }}
             />

@@ -1237,10 +1237,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vercel/analytics@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.2.0.tgz#d0c9983e52dd4cb86c0d975b1432ba31df5cd0a5"
-  integrity sha512-Q9hduY6+i73Is1m57Y3OlawleeYVi4cvuh/0j6IwmSndMOE4+BKkMwjnwz+7xnqfZCanipIG6+q+zHalH9X0Zg==
+"@vercel/analytics@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.2.2.tgz#715d8f203a170c06ba36b363e03b048c03060d5d"
+  integrity sha512-X0rctVWkQV1e5Y300ehVNqpOfSOufo7ieA5PIdna8yX/U7Vjz0GFsGf4qvAhxV02uQ2CVt7GYcrFfddXXK2Y4A==
   dependencies:
     server-only "^0.0.1"
 
@@ -1452,7 +1452,7 @@ axe-core@=4.7.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.7.0.tgz#34ba5a48a8b564f67e103f0aa5768d76e15bbbbf"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
-axios@^1.6.0:
+axios@^1.6.7:
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.7.tgz#7b48c2e27c96f9c68a2f8f31e2ab19f59b06b0a7"
   integrity sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==
@@ -1617,13 +1617,13 @@ contentful-sdk-core@^8.1.0:
     p-throttle "^4.1.1"
     qs "^6.11.2"
 
-contentful@^10.6.21:
-  version "10.6.21"
-  resolved "https://registry.yarnpkg.com/contentful/-/contentful-10.6.21.tgz#7e2a8cae91f5f06297df27053538e937490035a7"
-  integrity sha512-ez3zNJ1A2dJTuoNxSkFhwjkhrQ/jYYTvc8jFeFIMwZuYMHjYwL+mFo1372pSASeJ6QAIf2srKOmukzCGiHtcSg==
+contentful@^10.6.22:
+  version "10.6.22"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-10.6.22.tgz#c8c3921133ae8b4248ab2d78d92bbb5d5fbdd076"
+  integrity sha512-RgfcQnRLfMx7dEHR6fR/a8waz79zR7uXnUG9d1Ef5GvE9c/b/8FLqcoGesBfVuBiX23lBEUrO/gN2KYoe5bGiA==
   dependencies:
     "@contentful/rich-text-types" "^16.0.2"
-    axios "^1.6.0"
+    axios "^1.6.7"
     contentful-resolve-response "^1.8.1"
     contentful-sdk-core "^8.1.0"
     json-stringify-safe "^5.0.1"
@@ -2214,10 +2214,10 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-framer-motion@^11.0.5:
-  version "11.0.5"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.0.5.tgz#2ae1341d8605a01c50009d3bb195a67e4e2bfc69"
-  integrity sha512-Lb0EYbQcSK/pgyQUJm+KzsQrKrJRX9sFRyzl9hSr9gFG4Mk8yP7BjhuxvRXzblOM/+JxycrJdCDVmOQBsjpYlw==
+framer-motion@^11.0.6:
+  version "11.0.6"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.0.6.tgz#97c3076d9d718486eb533b58b88db800139d5fc3"
+  integrity sha512-BpO3mWF8UwxzO3Ca5AmSkrg14QYTeJa9vKgoLOoBdBdTPj0e81i1dMwnX6EQJXRieUx20uiDBXq8bA6y7N6b8Q==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:

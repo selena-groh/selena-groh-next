@@ -23,12 +23,20 @@ module.exports = {
       "drought-map",
       "comp20-sgroh",
       "bookshelf-css",
+      "bookshelf-art",
     ];
 
-    return githubProjects.map((project) => ({
-      source: `/${project}`,
-      destination: `${githubProjectURL}${project}`,
-      permanent: false,
-    }));
+    return [
+      ...githubProjects.map((project) => ({
+        source: `/${project}`,
+        destination: `${githubProjectURL}${project}`,
+        permanent: false,
+      })),
+      {
+        source: `/happy-birthday-colin`,
+        destination: `${githubProjectURL}bookshelf-art`,
+        permanent: false,
+      },
+    ];
   },
 };

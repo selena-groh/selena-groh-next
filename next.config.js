@@ -34,12 +34,12 @@ module.exports = {
       })),
       {
         source: `/happy-birthday-colin`,
-        destination: `https://bookshelf-next-mu.vercel.app/bookshelf`,
+        destination: `https://bookshelf-next-mu.vercel.app/`,
         permanent: false,
       },
       {
         source: `/bookshelf-next`,
-        destination: `https://bookshelf-next-mu.vercel.app/bookshelf`,
+        destination: `https://bookshelf-next-mu.vercel.app/`,
         permanent: false,
       },
     ];

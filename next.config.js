@@ -34,7 +34,12 @@ module.exports = {
       })),
       {
         source: `/happy-birthday-colin`,
-        destination: `${githubProjectURL}bookshelf-art`,
+        destination: `https://bookshelf-next-mu.vercel.app/bookshelf`,
+        permanent: false,
+      },
+      {
+        source: `/bookshelf-next`,
+        destination: `https://bookshelf-next-mu.vercel.app/bookshelf`,
         permanent: false,
       },
     ];

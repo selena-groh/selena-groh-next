@@ -42,6 +42,11 @@ module.exports = {
         destination: `https://bookshelf-next-mu.vercel.app/`,
         permanent: false,
       },
+      {
+        source: `/jazzy-vintage-cube`,
+        destination: `https://jazzy-vintage-cube.vercel.app/gallery`,
+        permanent: false,
+      },
     ];
   },
 };

@@ -47,6 +47,11 @@ module.exports = {
         destination: `https://jazzy-vintage-cube.vercel.app/gallery`,
         permanent: false,
       },
+      {
+        source: `/colin-pct-photos`,
+        destination: `https://photos.app.goo.gl/wf638hftsTLhrmws8`,
+        permanent: false,
+      },
     ];
   },
 };

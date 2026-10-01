@@ -876,14 +876,14 @@
     "@vercel/stega" "^1.1.0"
     json-pointer "^0.6.2"
 
-"@contentful/rich-text-react-renderer@^15.22.9":
-  version "15.22.9"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.22.9.tgz#aee71e5d0c923038041c5f4000e752864ce56aee"
-  integrity sha512-ubzuQKaIwB7AeUi1zHQ6EMvpLOMJ9p5LGxZznkcHG1Sn91LNZorQXfMt9K4tSoOR9Cn8KxN6ca8gMNNh5zGbig==
+"@contentful/rich-text-react-renderer@^16.2.2":
+  version "16.2.2"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-16.2.2.tgz#e046c3de605784181c12bb9513aac081dce68155"
+  integrity sha512-3hwKp+tYHRxKyzYTjFpwpI+laczYO1VS0sldSEVqPXfLcQnQabfUmYAL4dGtA35r2ce0+Wp4XVy9u4c7jxH20Q==
   dependencies:
-    "@contentful/rich-text-types" "^16.8.3"
+    "@contentful/rich-text-types" "^17.2.7"
 
-"@contentful/rich-text-types@^16.3.4", "@contentful/rich-text-types@^16.8.3":
+"@contentful/rich-text-types@^16.3.4":
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-16.8.3.tgz#f0effea5d0ed23f9abfd992c9b1be8a00f4d63e9"
   integrity sha512-vXwXDQMDbqITCWfTkU5R/q+uvXWCc1eYNvdZyjtrs0YDIYr4L7QJ2s1r4ZheIs3iVf3AFucKIHgDSpwCAm2wKA==
